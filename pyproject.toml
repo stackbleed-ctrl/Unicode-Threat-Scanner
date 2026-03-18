@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "unicode-threat-scanner"
+version = "1.0.0"
+description = "Detect Unicode-based supply-chain threats in source-code repositories"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = [
+    "security", "unicode", "supply-chain", "trojan-source",
+    "homoglyph", "bidi", "static-analysis", "linter",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.9"
+# Zero runtime dependencies — stdlib only
+dependencies = []
+
+[project.urls]
+Homepage   = "https://github.com/youruser/unicode-threat-scanner"
+Issues     = "https://github.com/youruser/unicode-threat-scanner/issues"
+Changelog  = "https://github.com/youruser/unicode-threat-scanner/blob/main/CHANGELOG.md"
+
+[project.scripts]
+unicode-scan = "unicode_threat_scanner:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["unicode_threat_scanner*"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
